@@ -8,7 +8,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Gouree",
     author_email="goureeg@gmail.com",
-    url="https://github.com/your-repo-url",  # Replace with your repository URL
+    url="https://github.com/GoGouree/collateral-value-calculator/tree/main",  # Replace with your repository URL
     packages=find_packages(where="src"),  # Look for packages in the 'src' directory
     package_dir={"": "src"},  # Root package directory is 'src'
     install_requires=[
