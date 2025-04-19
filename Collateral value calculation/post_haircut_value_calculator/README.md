@@ -5,43 +5,31 @@ This project calculates the post-haircut value of securities based on the last t
 ## Usage
 
 1. **Prepare your CSV file**  
-   Ensure your CSV file contains the required data format (stock names, last traded prices, haircut percentages). Save the file in the `data` folder as `sample_data.csv`. This can be a data sourcing directly to remove the manual step to save csv file.
+   Ensure your CSV file contains the required data format (stock names, last traded prices, haircut percentages). Save the file in the `data` folder as `sample_data.csv`. This can be a data sourcing directly to remove the manual step to save the CSV file.
 
 2. **Run the application**  
-   Execute the following command to run the application:
-   ```bash
-   post-haircut-value-calculator
-   ```
+   - **Command-line mode**:  
+     Execute the following command to run the application in command-line mode:
+     ```bash
+     post-haircut-value-calculator
+     ```
+   - **Front-end mode**:  
+     To use the front-end UI, start the Flask server by running:
+     ```bash
+     flask run
+     ```
+     Then, open your browser and navigate to the provided URL (usually `http://127.0.0.1:5000`) to interact with the application visually.
 
 3. **Front-end UI**  
-   A front-end UI has been created, allowing users to interact with the application visually. The UI was generated using a PNG file as an example to design the interface and generate the necessary code. 
+   A front-end UI has been created, allowing users to interact with the application visually. To generate the Flask and HTML files, a PNG file was used as a sample design and dragged into the GitHub chat window, where the necessary code was generated.
 
 4. **Process all stocks**  
-   The application will process all stocks in the file with a default quantity of 1000 and display the post-haircut values and save the file output in the data folder. This helps reuse the excel further in other processes also.
+   The application will process all stocks in the file with a default quantity of 1000 and display the post-haircut values and save the file output in the data folder. This helps reuse the Excel further in other processes also.
 
 5. **Generate a notification for a specific stock**  
    - Select a stock name from the processed data list displayed by the application.  
    - Enter the stock name and desired quantity when prompted.  
    - The application will prepare a notification report for the selected stock.
-
-## Publishing to Heroku
-
-To publish the application to Heroku, follow these high-level steps:
-1. Ensure your application has a `Procfile` specifying the entry point for the app.
-2. Install the Heroku CLI and log in to your Heroku account.
-3. Create a new Heroku app using the CLI:
-   ```bash
-   heroku create <app-name>
-   ```
-4. Push your code to Heroku:
-   ```bash
-   git push heroku main
-   ```
-5. Set up any required environment variables using the Heroku dashboard or CLI.
-6. Open the app in your browser:
-   ```bash
-   heroku open
-   ```
 
 ## Module Descriptions
 
