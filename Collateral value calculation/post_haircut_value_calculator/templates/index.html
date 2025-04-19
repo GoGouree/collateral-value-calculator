@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collateral For Margin Against Share</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+        }
+        .search-bar input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .download-btn {
+            margin-left: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .download-btn:hover {
+            background-color: #0056b3;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+    <script>
+        function filterTable() {
+            const query = document.getElementById("searchInput").value.toLowerCase();
+            const rows = document.querySelectorAll("table tbody tr");
+            rows.forEach(row => {
+                const stockName = row.querySelector("td:nth-child(2)").textContent.toLowerCase();
+                row.style.display = stockName.includes(query) ? "" : "none";
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Collateral For Margin Against Share</h1>
+    <p>Margin against shares allows you to get exposure/margin against shares in your demat account by keeping them as collateral. Haircut is the percentage by which the market value of your pledged shares is reduced for the purpose of calculating the collateral value.</p>
+
+    <div class="search-bar">
+        <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Enter at least 3 characters of symbol or name">
+        <a href="/download" class="download-btn">Download</a>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Stock Name</th>
+                <th>Last Traded Price</th>
+                <th>Haircut Percentage</th>
+                <th>Post Haircut Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for security in securities %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ security['stock name'] }}</td>
+                <td>{{ security['last traded price'] }}</td>
+                <td>{{ security['haircut percentage'] }}</td>
+                <td>{{ security['post haircut value'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
