@@ -1,3 +1,25 @@
+Metadata-Version: 2.4
+Name: post_haircut_value_calculator
+Version: 1.0.0
+Summary: A tool to calculate post-haircut values for securities and generate notifications.
+Home-page: https://github.com/GoGouree/collateral-value-calculator/tree/main
+Author: Gouree
+Author-email: goureeg@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=1.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
 # Post Haircut Value Calculator
 
 This project calculates the post-haircut value of securities based on the last traded price and haircut percentage. It processes all stocks with a default quantity of 1000 and allows users to specify a particular stock and quantity for a detailed notification report.
